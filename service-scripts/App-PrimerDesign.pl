@@ -38,10 +38,13 @@ sub preflight
 {
     my($app, $app_def, $raw_params, $params) = @_;
     print STDERR "preflight: num params=", scalar keys %$params, "\n";
+
+    my $time = 60 * 60 * 1;
+
     my $pf = {
 	cpu => 1,
 	memory => "16G",
-	runtime => 0,
+    runtime => $time,
 	storage => 0,
 	is_control_task => 0,
     };
